@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Session Management</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.min.css">
+        <script>
+            $(document).ready(function () {
+                $("#submit").click(function () {
+                    var email = $("#email").val();
+                    var password = $("#password").val();
+
+                    //possible validation here
+
+                    $.post("http://localhost:3000/login", { email: email, password: password }, function (data) {
+                        if (data === 'done') {
+                            window.location.href = "/admin";
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <img class="login-logo" src = "/images/binotel-small-logo.png" alt = "logo" />
+            <div class="input-group">
+                <input type="text" size="40" placeholder="Type your email" id="email" class="form-control"><br />
+                <input type="password" size="40" placeholder="Type your password" id="password" class="form-control"><br />
+                <input type="button" value="Submit" id="submit" class="btn btn-default">
+            </div>
+        </div>
+    </body>
+
+    <style>
+        .container {
+            width: 300px;
+            height: 220px;
+            position:absolute; 
+            left:0; right:0;
+            top:0; bottom:0;
+            margin:auto;
+            max-width:100%;
+            max-height:100%;
+            overflow:auto;
+        }
+
+        .login-logo {
+            display: block;
+            margin: 0 auto 10px;
+            width: 100%;
+        }
+
+        #email, #password {
+            margin: 0 0 10px;
+        }
+
+        #submit {
+            display: block;
+            margin: 0 auto;
+            padding: 9px 30px;
+            border-radius: 0;
+        }
+    </style>
+</html>

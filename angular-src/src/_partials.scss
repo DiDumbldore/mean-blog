@@ -1,0 +1,35 @@
+//color variables
+$lightViolet: #683b94;
+$darkViolet: #502779;
+$white: #ffffff;
+
+//mixins
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin animate($animation, $duration, $repeat, $easing) {
+	-webkit-animation: $animation $duration $repeat $easing;
+	-moz-animation: $animation $duration $repeat $easing;
+	-ms-animation: $animation $duration $repeat $easing;
+	animation: $animation $duration $repeat $easing;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+//partials 
+
+.wrapper {
+    @include clearfix;
+    width: 1276px;
+    height: 100%;
+    margin: 0 auto;
+}

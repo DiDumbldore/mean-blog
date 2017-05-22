@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="wrapper">
+    <section class="header__left">
+      <div class="header__logo">
+        <a class="logotype" href="#"><img src="../../assets/images/bt-logo.png" alt="bt-logo"></a>
+        <span class="logo-tail">| Admin panel</span>
+      </div>
+    </section>
+    <section class="header__right">
+      <nav class="header__navbar">
+        <ul class="navbar-ul">
+          <li class="navbar-ul__item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a [routerLink]="['/dashboard']">Посты</a>  
+          </li>
+          <li class="navbar-ul__item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a [routerLink]="['/authors-columns']">Колонка Авторов</a>
+          </li>
+          <li class="navbar-ul__item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a [routerLink]="['/settings']">Настройки</a>
+            </li>
+          <li class="navbar-ul__item"><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
+    </section>
+  </div>
+</header>

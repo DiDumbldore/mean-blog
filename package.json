@@ -1,0 +1,27 @@
+{
+  "name": "business-times",
+  "version": "1.0.0",
+  "description": "Business times blog platform.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "ejs": "^1.0.0",
+    "express": "*",
+    "express-mysql-session": "^1.2.0",
+    "express-session": "*",
+    "md5": "^2.2.1",
+    "mysql": "github:mysqljs/mysql",
+    "bootstrap": "^3.3.7"
+  },
+  "author": "Nadya Korniyenko",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.5.3"
+  }
+}
