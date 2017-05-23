@@ -1,5 +1,54 @@
 @import '../../../partials';
 
-h2 {
-    color: $lightViolet;
+.sidebar__categories {
+    width: 100%;
+    margin: 0 0 36px 0;
+
+    .categories-header {
+        font: 300 13px/13px Open Sans;
+        text-transform: uppercase;
+        color: $headerGrey;
+        margin: 0 0 20px 0;
+        padding: 0 0 0 10px;
+    }
+
+    .categories-ul {
+        list-style: none;
+
+        .categories-ul__item {
+            width: 100%;
+            height: 40px;
+            
+
+            a { 
+                display: block;
+                font: 400 15px/40px Open Sans;
+                color: $listGrey;
+                text-decoration: none;
+                padding: 0 0 0 10px;
+                @include transition(.3s);
+                cursor: pointer;
+
+                 &:hover {
+                    background-color: $lightViolet;
+                    color: $white;
+                }
+            }
+        }  
+
+        .categories-ul__item--active {
+            @extend .categories-ul__item;
+
+            a {
+                display: block;
+                font: 400 15px/40px Open Sans;
+                text-decoration: none;
+                padding: 0 0 0 10px;
+                @include transition(.3s);
+                cursor: pointer;
+                background-color: $lightViolet;
+                color: $white;
+            } 
+        }
+    }
 }

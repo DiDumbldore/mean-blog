@@ -11,7 +11,7 @@ const port = 3000;
 const User = require('./models/user');
 app.use('/users', users);
 
-// app.use(cors());
+app.use(cors());
 
 
 //Set static folder 

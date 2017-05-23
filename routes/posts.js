@@ -1,4 +1,8 @@
-// var express = require('express');
+
+const express = require('express');
+const router = express.Router();
+const User = require('../models/post');
+const connection = require('../models/post');// var express = require('express');
 // var router = express.Router();
 // //var mongojs = require('mongojs');
 // //var db = mongojs('mongodb://anil:anil@ds139899.mlab.com:39899/tasks-anil', ['tasks']);
@@ -138,4 +142,4 @@
 //     }
 // });
 
-// module.exports = router;
+module.exports = router;

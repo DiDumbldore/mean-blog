@@ -1,4 +1,18 @@
 
+@import '.././partials';
 
+.sidebar {
+    width: 230px;
+    height: 100%;
+    padding: 33px 0 0;
+    background-color: #eeedf0;
+    float: right;
+}
 
-
+.main {
+    width: 98%;
+    height: 100%;
+    padding: 33px 0 0;
+    background-color: $white;
+    float: left;
+}

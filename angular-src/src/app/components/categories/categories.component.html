@@ -1,2 +1,20 @@
-<h2 class="page-header">Категории</h2>
-<p>Категории постов</p>
+<article class="sidebar__categories">
+    <h3 class="categories-header">Разделы</h3>
+    <ul class="categories-ul">
+        <li class="categories-ul__item categories-ul__item--active" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
+            <a href="/admin/posts/articles" (click)="ngOnCategoryFilter()">Статьи</a>
+        </li>
+        <li class="categories-ul__item" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
+            <a href="/admin/posts/business_advise">Бизнес-советы</a>
+        </li>
+        <li class="categories-ul__item" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
+            <a href="/admin/posts/cases">Кейсы</a>
+        </li>
+        <li class="categories-ul__item" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
+            <a href="/admin/posts/success_stories">Истории успеха</a>
+        </li>
+        <li class="categories-ul__item" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
+            <a href="/admin/posts/###">Что-то еще</a>
+        </li>
+    </ul>
+</article>

@@ -13,12 +13,19 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { TagsComponent } from './components/tags/tags.component';
+import { PostComponent } from './components/post/post.component';
+
+import { PostService } from './services/post.service';
+
+import 'rxjs/add/operator/map';
+import 'rxjs/Observable';
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: DashboardComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'authors-columns', component: AuthorsColumnsComponent},
   {path: 'settings', component: SettingsComponent},
+  {path: 'admin/posts/:category', component: DashboardComponent},
 ]
 
 @NgModule({
@@ -31,7 +38,8 @@ const appRoutes: Routes = [
     SettingsComponent,
     SidebarComponent,
     CategoriesComponent,
-    TagsComponent
+    TagsComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +47,7 @@ const appRoutes: Routes = [
     HttpModule, 
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 

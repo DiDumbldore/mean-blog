@@ -14,6 +14,15 @@
             float: left;
 
             .logotype {
+                width: 128px;
+                height: 16px;
+                display: inline-block;
+                position: relative;
+
+                img {
+                    position: absolute;
+                    top: 3px;
+                }
             }
 
             .logo-tail {
@@ -53,12 +62,26 @@
                         text-transform: uppercase;
                         font: 400 13px/60px Open Sans;
                         @include opacity(0.5);
+                        @include transition(.3s);
 
                         &:hover {
-                            background-color: $darkViolet;
                             @include opacity(1);
                         }
                     }
+                }
+
+                .navbar-ul__item--active  a {
+                    display: block;
+                    color: $white;
+                    text-align: center;
+                    padding: 0 28px;
+                    height: inherit;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font: 400 13px/60px Open Sans;
+                    background-color: $darkViolet;
+                    @include opacity(1);
+                    @include transition(.3s);
                 }
             }
         }

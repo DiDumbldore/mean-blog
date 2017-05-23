@@ -1,0 +1,29 @@
+<article class="post-block">
+  <section *ngFor="let post of posts" class="post">
+    <article class="post__upper-block">
+      <section class="post__img">
+        <img class="post__img" src = "" alt = "">
+      </section>
+      <section class="post__content">
+        <h2 class="post-title">title: {{ post.title }}</h2>
+        <p class="post-text">content: {{ post.content }}</p>
+      </section>
+      <section class="post__operations">
+        <input type="button" value="Опубликован">
+        <input type="button" value="Редактировать"> 
+      </section>
+    </article>
+    <article class="post__lower-block">
+      <section class="post__date">
+        <p class="post-datetext">21.07.2017</p>
+      </section>
+      <section class="post__tags">
+        <p class="post-tagstext">#HR   #персонал   #психология   #чето еще  #александр марков</p>
+      </section>
+    </article>
+  </section>
+</article>
+
+
+<!--<p><a href="http://localhost:3000/admin/posts/{{post.category}}">{{ post.category }}</a></p>-->
+  

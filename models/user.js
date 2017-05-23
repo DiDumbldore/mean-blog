@@ -25,9 +25,9 @@ pool.query("SELECT * FROM `userStructure`", function (error, results, fields) {
 
 //get all users
 module.exports.findAll = function (callback) {
-    // pool.query('SELECT * FROM userStructure ORDER BY id DESC', function (error, results, fields) {
-    //     console.log(results, fields);
-    // });
+    pool.query('SELECT * FROM userStructure ORDER BY id DESC', function (error, results, fields) {
+        console.log(results, fields);
+    });
 }
 
 

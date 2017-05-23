@@ -1,1 +1,30 @@
 @import '../../../partials';
+
+.sidebar__tags {
+    width: 100%;    
+
+    .tags-header {
+        font: 300 13px/13px Open Sans;
+        text-transform: uppercase;
+        color: $headerGrey;
+        margin: 0 0 20px 0;
+        padding: 0 0 0 10px;
+    }
+
+    .tags-ul {
+        list-style: none;
+        padding: 0 0 0 10px;
+
+        .tags-ul__item {
+            font: 400 13px/23px Open Sans;
+            float: left;
+            color: $listGrey;
+            padding: 0 12px 0 0;
+            cursor: pointer;
+
+            &:hover {
+                color: lighten($listGrey, 15%);
+            }
+        }
+    }
+}
