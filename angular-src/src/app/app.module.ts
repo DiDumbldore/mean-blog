@@ -16,6 +16,7 @@ import { TagsComponent } from './components/tags/tags.component';
 import { PostComponent } from './components/post/post.component';
 
 import { PostService } from './services/post.service';
+import { CategoryService } from './services/category.service';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/Observable';
@@ -47,8 +48,9 @@ const appRoutes: Routes = [
     HttpModule, 
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [PostService],
+  providers: [PostService,
+              CategoryService],
   bootstrap: [AppComponent]
-})
+})  
 
 export class AppModule { }

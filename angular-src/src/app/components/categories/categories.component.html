@@ -1,20 +1,35 @@
 <article class="sidebar__categories">
     <h3 class="categories-header">Разделы</h3>
-    <ul class="categories-ul">
+    <!--<ul class="categories-ul">
         <li class="categories-ul__item categories-ul__item--active" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
-            <a href="/admin/posts/articles" (click)="ngOnCategoryFilter()">Статьи</a>
+            <a routerLink="/admin/posts/articles" (click)="ngOnCategoryFilter()">Статьи</a>
         </li>
         <li class="categories-ul__item" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
-            <a href="/admin/posts/business_advise">Бизнес-советы</a>
+            <a href="/admin/posts/business-advise">Бизнес-советы</a>
         </li>
         <li class="categories-ul__item" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
             <a href="/admin/posts/cases">Кейсы</a>
         </li>
         <li class="categories-ul__item" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
-            <a href="/admin/posts/success_stories">Истории успеха</a>
+            <a href="/admin/posts/success-stories">Истории успеха</a>
         </li>
         <li class="categories-ul__item" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
-            <a href="/admin/posts/###">Что-то еще</a>
+            <a routerLink="/admin/posts/smth">Что-то еще</a>
         </li>
-    </ul>
+    </ul>-->
+    <!--<ul class="categories-ul">
+        <!--<li #ml class="categories-ul__item" value="статьи" (click)="reloadPosts(ml.value)" >
+                <a>{{ category.category }}</a>    
+        </li>-->
+        <!--<li #c *ngFor="let category of categories" class="categories-ul__item" value="Статьи" (click)="reloadPosts({category: c.value})" >
+                <a>{{ category.category }}</a>    
+        </li>-->
+<!--        
+    </ul>-->
+   
+
+    <select #c (change)="reloadPosts({category: c.value})" >
+        <option value="">Select category...</option>
+        <option *ngFor="let category of categories" value="{{ category.category }}">{{ category.category }}</option>
+    </select>
 </article>

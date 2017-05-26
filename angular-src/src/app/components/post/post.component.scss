@@ -1,0 +1,83 @@
+@import '../../../partials';
+
+.post-block {
+    margin: 0 0 60px 52px;
+
+    .post {
+        margin: 30px 0 0;
+
+        .post__upper-block {
+            @include clearfix;
+
+            .post__img {
+                float: left;
+                width: 174px;
+                height: 110px;
+                margin: 0 20px 0 0;
+            }
+
+            .post__content {
+                float: left;
+                width: 520px;
+                margin: 0 20px 0 0;
+
+                .post-title {
+                    font: 400 25px/17px Open Sans;
+                    color: $black;
+                }
+
+                .post-text {
+                    margin: 20px 0 0;
+                    font: 400 13px/20px Open Sans;
+                    color: $black;
+                }
+            }
+
+            .post__operations {
+                width: 92px;
+                float: left;
+
+                .post__btn {
+                    width: 92px;
+                    height: 27px;
+                    background-color: $darkGrey;
+                    color: $white;
+                    font: 400 10px/27px Open Sans;
+                    text-align: center;
+                    margin: 0 0 1px 0;
+                }
+
+                .post__btn--active {
+                    @extend .post__btn;
+                    background-color: $lightViolet;
+                }
+            }
+        }
+
+        .post__lower-block {
+            @include clearfix;
+            margin: 25px 0 0;
+
+            .post__date {
+                width: 90px;
+                float: left;
+
+                .post-datetext {
+                    font: 400 13px/13px Open Sans;
+                    color: $headerGrey;
+                }
+            }
+
+            .post__tags {
+                width: 622px;
+                float: left;
+                padding: 0 0 0 10px;
+
+                .post-tagstext {
+                    font: 400 13px/13px Open Sans;
+                    color: $headerGrey;
+                }
+            }
+        }
+    }
+}

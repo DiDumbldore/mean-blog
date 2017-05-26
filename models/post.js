@@ -9,6 +9,12 @@ var pool = mysql.createPool({
 });
 
 
+// pool.query("SELECT `category` FROM `postStructure`", function(err, rows, fields)   
+// {  
+//   if (err) throw err;  
+  
+//   console.log(rows);  
+// });  
 
 
 
@@ -23,8 +29,11 @@ module.exports.findByCategory = function(category, callback) {
 	pool.query("SELECT * FROM `postStructure` WHERE category = ?", [category], callback);
 }
 
-// module.exports.findByCategory = function(category, callback) {
-// 	pool.query("SELECT * FROM `postStructure` WHERE `category` = ?", [articles], callback);
-// }
+//filter categories of posts
+module.exports.getAllCategories = function(callback) {
+	pool.query("SELECT `category` FROM `postStructure`", callback);
+}
+
+
 
 

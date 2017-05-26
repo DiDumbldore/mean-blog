@@ -145,6 +145,31 @@ module.exports = function (app) {
         }
     });
 
+    //get all posts categories
+    app.get('/admin/post_categories', function (req, res) {
+        sess = req.session;
+
+        if (!sess.userData) {
+            sess.userData = {
+                id: 2,
+                email: 'nd@binotel.ua',
+                name: 'nd'
+            };
+        }
+
+        if (sess.userData) {
+
+            Post.getAllCategories(function (err, rows, fields) {
+                if (err) throw err;
+                return res.json(rows); 
+            })
+
+        } else {
+            res.redirect('/');
+        }
+    });
+
+
 
 
 

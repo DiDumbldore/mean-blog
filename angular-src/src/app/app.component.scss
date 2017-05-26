@@ -1,18 +1,38 @@
 
 @import '.././partials';
 
-.sidebar {
-    width: 230px;
+body {
+    @include clearfix;
+    min-height: 800px;
     height: 100%;
-    padding: 33px 0 0;
-    background-color: #eeedf0;
-    float: right;
 }
 
-.main {
-    width: 98%;
-    height: 100%;
-    padding: 33px 0 0;
-    background-color: $white;
-    float: left;
+.wrapper {
+    height: 1000px;
+    width: 100%;
+    overflow: auto;
+
+    .content-wrapper {
+        float: left;
+        width: 100%;
+
+        .main {
+            margin-left: 260px;
+            padding: 33px 0 0;
+            background-color: $white;
+
+        }
+    }
+
+    .sidebar {
+        @include clearfix;
+        width: 260px;
+        margin-left: -100%;
+        padding: 33px 0 0;
+        background-color: #eeedf0;
+        float: left;
+        height: 100%;
+    }
 }
+
+

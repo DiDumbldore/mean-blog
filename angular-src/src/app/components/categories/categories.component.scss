@@ -1,5 +1,7 @@
 @import '../../../partials';
 
+
+    
 .sidebar__categories {
     width: 100%;
     margin: 0 0 36px 0;
@@ -9,7 +11,7 @@
         text-transform: uppercase;
         color: $headerGrey;
         margin: 0 0 20px 0;
-        padding: 0 0 0 10px;
+        padding: 0 0 0 27px;
     }
 
     .categories-ul {
@@ -25,11 +27,11 @@
                 font: 400 15px/40px Open Sans;
                 color: $listGrey;
                 text-decoration: none;
-                padding: 0 0 0 10px;
+                padding: 0 0 0 27px;
                 @include transition(.3s);
                 cursor: pointer;
 
-                 &:hover {
+                    &:hover {
                     background-color: $lightViolet;
                     color: $white;
                 }
@@ -43,7 +45,7 @@
                 display: block;
                 font: 400 15px/40px Open Sans;
                 text-decoration: none;
-                padding: 0 0 0 10px;
+                padding: 0 0 0 27px;
                 @include transition(.3s);
                 cursor: pointer;
                 background-color: $lightViolet;
@@ -51,4 +53,6 @@
             } 
         }
     }
+
 }
+

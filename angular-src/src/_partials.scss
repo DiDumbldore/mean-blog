@@ -6,6 +6,7 @@ $lightGrey: #eeedf0;
 $darkGrey: #a9a8ad;
 $headerGrey: #a4a2a6;
 $listGrey: #706f73;
+$black: #000000;
 
 //mixins
 @mixin clearfix {
@@ -36,30 +37,9 @@ $listGrey: #706f73;
     transition: $duration;
 }
 
+
+
+
+
 //partials 
 
-.wrapper {
-    @include clearfix;
-    width: 1287px;
-    height: 100%;
-    margin: 0 auto;
-}
-
-.left {
-    @include clearfix;
-    width: 19%;
-	min-width: 230px;
-    height: 100%;
-	float: left;
-	text-align: left;
-	background-color: $lightGrey;
-}
-
-.right {
-    @include clearfix;
-    width: 81%;
-    height: 100%;
-	float: right;
-	text-align: left;
-	background-color: $white;
-}
