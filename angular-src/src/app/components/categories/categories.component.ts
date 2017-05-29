@@ -14,31 +14,52 @@ export class CategoriesComponent implements OnInit {
   categories: any[];
   posts: any[];
 
+
   constructor(private _categoryService: CategoryService,
-              private _postService: PostService) { }
+    private _postService: PostService) { }
 
   ngOnInit() {
     this._categoryService.getCategories()
- 			.subscribe(categories => this.categories = categories);
-      //  console.log(this.categories);
-       
-  }
+      .subscribe(categories => this.categories = categories)
 
-  loadPosts(filter?){
-    this._postService.getPosts()
-      .subscribe(posts => this.posts = posts);
-  }
-
- reloadPosts(filter) {
-    // this.currentPost = null;
-    console.log(filter);
-
-    this.loadPosts(filter);
+    
 
   }
 
-  Blah(){
+  onClick(event, value){
+      console.log(event);
+      console.log(event);
+    }
+
+
+  onSelect(categoryItem: CategoryItem): void {
+    this.selectedCategory = categoryItem;
+  }
+
+  selectedCategory: CategoryItem;
+
+
+
+
+  // loadPosts(filter?){
+  //   this._postService.getPosts()
+  //     .subscribe(posts => this.posts = posts);
+  // }
+
+  //  reloadPosts(filter) {
+  //     // this.currentPost = null;
+  //     console.log(filter);
+
+  //     this.loadPosts(filter);
+
+  //   }
+
+  blah() {
     console.log("fuck");
   }
 
+}
+
+export class CategoryItem {
+  category: string;
 }

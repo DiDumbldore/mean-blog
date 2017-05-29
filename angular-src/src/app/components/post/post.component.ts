@@ -22,20 +22,20 @@ export class PostComponent implements OnInit {
     this._categoryService.getCategories()
       .subscribe(categories => this.categories = categories);
 
-    this.loadPosts();
-  }
-
-  loadPosts(filter?) {
     this._postService.getPosts()
       .subscribe(posts => this.posts = posts);
   }
 
-  reloadPosts(filter) {
-    // this.currentPost = null;
-    console.log(filter);
+  // loadPosts(filter?) {
+    
+  // }
 
-    this.loadPosts(filter);
+  // reloadPosts(filter) {
+  //   // this.currentPost = null;
+  //   console.log(filter);
 
-  }
+  //   this.loadPosts(filter);
+
+  // }
 
 }

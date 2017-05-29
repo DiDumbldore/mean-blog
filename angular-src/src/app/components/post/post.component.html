@@ -1,21 +1,17 @@
 <article class="post-block">
-  <select #c (change)="reloadPosts({category: c.value})" >
-        <option value="">Select category...</option>
-        <option *ngFor="let category of categories" value="{{ category.category }}">{{ category.category }}</option>
-    </select>
-  <section #c *ngFor="let post of posts" class="post" value="Статьи" (click)="reloadPosts(c.value)" >
+  <a *ngFor="let post of posts" class="post">
     <article class="post__upper-block">
       <section class="post__img">
-        <img class="post__img" src = "../../assets{{ post.titleImage }}" alt = "post-img">
+        <img class="post__img" src="../../assets{{ post.titleImage }}" alt="post-img">
       </section>
       <section class="post__content">
         <h2 class="post-title">{{ post.title }}</h2>
         <p class="post-text">{{ post.shortContent }}</p>
       </section>
       <section class="post__operations">
-        <input type="button" value="Опубликован" class="post__btn post__btn--active">
-        <input type="button" value="В работе" class="post__btn"> 
-        <input type="button" value="Редактировать" class="post__btn"> 
+        <button class="post__btn post__btn--active"><a>Опубликован</a></button>
+        <button class="post__btn"><a>В работе</a></button>
+        <button class="post__btn"><a [routerLink]="['/dashboard/details', post.id]">Редактировать</a></button>
       </section>
     </article>
     <article class="post__lower-block">
@@ -26,9 +22,8 @@
         <p class="post-tagstext">{{ post.tags }}</p>
       </section>
     </article>
-  </section>
+  </a>
 </article>
 
 
 <!--<p><a href="http://localhost:3000/admin/posts/{{post.category}}">{{ post.category }}</a></p>-->
-  

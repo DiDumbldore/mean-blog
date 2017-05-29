@@ -17,19 +17,15 @@
             <a routerLink="/admin/posts/smth">Что-то еще</a>
         </li>
     </ul>-->
-    <!--<ul class="categories-ul">
-        <!--<li #ml class="categories-ul__item" value="статьи" (click)="reloadPosts(ml.value)" >
-                <a>{{ category.category }}</a>    
-        </li>-->
-        <!--<li #c *ngFor="let category of categories" class="categories-ul__item" value="Статьи" (click)="reloadPosts({category: c.value})" >
-                <a>{{ category.category }}</a>    
-        </li>-->
-<!--        
-    </ul>-->
-   
+    <ul class="categories-ul">
+        <li #c *ngFor="let categoryItem of categories" class="categories-ul__item" value="{{ categoryItem.category }}" [class.categories-ul__item--active]="categoryItem === selectedCategory" (click)="onSelect(categoryItem)">
+            <a [routerLink]="['/dashboard', categoryItem.category]">{{ categoryItem.category }}</a>
+        </li>
 
-    <select #c (change)="reloadPosts({category: c.value})" >
+    </ul>
+
+    <!--<select #c (change)="reloadPosts({category: c.value})" >
         <option value="">Select category...</option>
         <option *ngFor="let category of categories" value="{{ category.category }}">{{ category.category }}</option>
-    </select>
+    </select>-->
 </article>

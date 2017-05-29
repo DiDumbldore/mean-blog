@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { AppRoutes } from './app.routes';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -14,6 +15,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { TagsComponent } from './components/tags/tags.component';
 import { PostComponent } from './components/post/post.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
 import { PostService } from './services/post.service';
 import { CategoryService } from './services/category.service';
@@ -21,13 +23,7 @@ import { CategoryService } from './services/category.service';
 import 'rxjs/add/operator/map';
 import 'rxjs/Observable';
 
-const appRoutes: Routes = [
-  {path: '', component: DashboardComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'authors-columns', component: AuthorsColumnsComponent},
-  {path: 'settings', component: SettingsComponent},
-  {path: 'admin/posts/:category', component: DashboardComponent},
-]
+
 
 @NgModule({
   declarations: [
@@ -40,13 +36,14 @@ const appRoutes: Routes = [
     SidebarComponent,
     CategoriesComponent,
     TagsComponent,
-    PostComponent
+    PostComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule, 
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(AppRoutes),
   ],
   providers: [PostService,
               CategoryService],
