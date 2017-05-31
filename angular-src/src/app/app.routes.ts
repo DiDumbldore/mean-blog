@@ -11,12 +11,12 @@ import { TagsComponent } from './components/tags/tags.component';
 import { PostComponent } from './components/post/post.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
-
 export const AppRoutes: Routes = [
-    { path: '', component: DashboardComponent },
     { path: 'dashboard', component: DashboardComponent },
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'authors-columns', component: AuthorsColumnsComponent },
     { path: 'settings', component: SettingsComponent },
+    //   {path: 'admin/posts/:category', component: DashboardComponent},
     {
         path: 'dashboard/:category',
         component: DashboardComponent,
@@ -24,5 +24,5 @@ export const AppRoutes: Routes = [
             category: 'category'
         }
     },
-     { path: "dashboard/details/:id", component: PostDetailComponent },
+    { path: 'dashboard/details/:id', component: PostDetailComponent },
 ]

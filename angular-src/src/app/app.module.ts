@@ -24,7 +24,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/Observable';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,16 +37,28 @@ import 'rxjs/Observable';
     TagsComponent,
     PostComponent,
     PostDetailComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule, 
+    HttpModule,
     RouterModule.forRoot(AppRoutes),
   ],
-  providers: [PostService,
-              CategoryService],
+  providers: [
+    PostService,
+    CategoryService,
+    {
+      provide: 'category',
+      useValue: () => {
+        return {
+          id: 1,
+          title: '',
+        }
+      }
+    }
+  ],
   bootstrap: [AppComponent]
-})  
+})
 
 export class AppModule { }
