@@ -1,12 +1,12 @@
 module.exports = function (app) {
-    const mysql = require('mysql');
-    var session = require('express-session');
-    var MySQLStore = require('express-mysql-session')(session);
-    var md5 = require('md5');
-    const bodyParser = require('body-parser');
-    const User = require('./models/user');
-    const Post = require('./models/post');
-    var crypto = require('crypto');
+    var mysql = require('mysql'),
+        session = require('express-session'),
+        MySQLStore = require('express-mysql-session')(session),
+        md5 = require('md5'),
+        bodyParser = require('body-parser'),
+        User = require('./models/user'),
+        Post = require('./models/post'),
+        crypto = require('crypto');
 
     var options = {
         host: '194.88.219.69',
