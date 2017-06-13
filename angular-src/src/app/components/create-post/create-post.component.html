@@ -10,7 +10,7 @@
       <section class="post__content">
         <input name="postTitle" [(ngModel)]="post.title"
               class="post-title" 
-              value="{{ post.title }}">
+              placeholder="Заголовок..">
          
 
         <!--<section class="post__img">
@@ -32,20 +32,20 @@
         <section class="post__date">
           <input name="postDate" [(ngModel)]="post.date"
                  class="post-datetext" 
-                 value="{{ post.date }}">
+                 placeholder="Дата..">
         </section>
 
         <section class="post__tags">
           <input  name="postTags" [(ngModel)]="post.tags"
                  class="post-tagstext" 
-                 value="{{ post.tags }}">
+                 placeholder="Теги..">
         </section>
 
       </section>
       
       <section class="post__buttons">
-        <button class="post__btn" (click)="updatePost(post)">
-          <a >Сохранить изменения</a>
+        <button class="post__btn" (click)="addPost(post)">
+          <a>Сохранить изменения</a>
         </button>
       </section>
     </article>

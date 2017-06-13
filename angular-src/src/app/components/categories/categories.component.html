@@ -19,7 +19,7 @@
     </ul>-->
     <ul class="categories-ul">
         <li *ngFor="let categoryItem of categories" class="categories-ul__item" [class.categories-ul__item--active]="categoryItem === selectedCategory" (click)="onSelect(categoryItem)">
-                <a [routerLink]="['dashboard', categoryItem.category]">{{ categoryItem.category }}</a>    
+                <a [routerLink]="['/admin/posts', categoryItem.category]">{{ categoryItem.category }}</a>    
         </li>
     </ul>
 </article>

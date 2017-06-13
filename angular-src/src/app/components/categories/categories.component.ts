@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import 'rxjs/add/operator/map';
+// import { PostService } from '../../services/post.service';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class CategoriesComponent implements OnInit {
 
   constructor(private _categoryService: CategoryService) { }
 
+// categoryParams: string;
 
   ngOnInit() {
     this._categoryService.getCategories()
@@ -24,6 +26,12 @@ export class CategoriesComponent implements OnInit {
   onSelect(categoryItem: CategoryItem): void {
     this.selectedCategory = categoryItem;
   }
+
+  // onChange(){
+  //   console.log("categories changed " +  this.selectedCategory.category);
+  //   this.selectedCategory.category;
+  //   this._postService.setArrayReference(this.categoryParams);
+  // }
 
   selectedCategory: CategoryItem;
 }

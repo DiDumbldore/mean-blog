@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
+   //admin or client side check
+  //  adminMode;
+
+  //   if (session) {
+  //       this.adminMode = true;
+  //   } else {
+  //       return;
+  //   }
+
 }

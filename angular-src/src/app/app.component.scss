@@ -8,9 +8,9 @@ body {
 }
 
 .wrapper {
-    height: 1000px;
+    height: 1336px;
     width: 100%;
-    overflow: auto;
+    // overflow: auto;
 
     .content-wrapper {
         float: left;
@@ -20,6 +20,17 @@ body {
             margin-left: 260px;
             padding: 33px 0 0;
             background-color: $white;
+
+            .post__create {
+                height: 44px;
+                width: 294px;
+                display: block;
+                background-color: #683b94;
+                margin: 0 0 0 532px;
+                font: 300 15px/35px Open Sans;
+                color: #ffffff;
+                cursor: pointer;
+            }
 
         }
     }

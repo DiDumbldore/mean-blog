@@ -86,7 +86,7 @@ module.exports = function (app) {
 
 
 
-//Posts ----------> routes/posts.js
+    //Posts ----------> routes/posts.js
 
 
     //path to CRUD all posts, admin mode
@@ -107,7 +107,7 @@ module.exports = function (app) {
             //get all posts when user checked
             Post.getAllPosts(function (err, rows, fields) {
                 if (err) throw err;
-                return res.json(rows); 
+                return res.json(rows);
             })
 
         } else {
@@ -115,18 +115,52 @@ module.exports = function (app) {
         }
     });
 
-    //get posts by category, admin mode
-    app.get('/admin/posts/:category', function (req, res) {
+
+
+    //get posts by id, admin mode
+    app.get('/admin/posts/any/:id', function (req, res) {
         sess = req.session;
 
-         if (!sess.userData) {
+        if (!sess.userData) {
             sess.userData = {
                 id: 2,
                 email: 'nd@binotel.ua',
                 name: 'nd'
             };
         }
-        
+
+        if (sess.userData) {
+
+            Post.findById(req.params.id, function (err, rows, fields) {
+                searchedId = req.params.id * 1;
+                existingId = rows[0].id;
+                console.log(existingId);
+
+                if (rows.length) {
+                    //  res.json(rows[0].tags);
+                    return res.json(rows);
+                } else
+                    return;
+            })
+
+        } else {
+            res.redirect('/');
+        }
+    });
+
+
+    //get posts by category, admin mode
+    app.get('/admin/posts/:category', function (req, res) {
+        sess = req.session;
+
+        if (!sess.userData) {
+            sess.userData = {
+                id: 2,
+                email: 'nd@binotel.ua',
+                name: 'nd'
+            };
+        }
+
         if (sess.userData) {
             //get all posts when user checked
             Post.findByCategory(req.params.category, function (err, rows, fields) {
@@ -145,6 +179,9 @@ module.exports = function (app) {
         }
     });
 
+
+
+
     //get all posts categories
     app.get('/admin/post_categories', function (req, res) {
         sess = req.session;
@@ -161,7 +198,7 @@ module.exports = function (app) {
 
             Post.getAllCategories(function (err, rows, fields) {
                 if (err) throw err;
-                return res.json(rows); 
+                return res.json(rows);
             })
 
         } else {
@@ -169,6 +206,83 @@ module.exports = function (app) {
         }
     });
 
+
+    //update post
+    app.put('/admin/posts/any/:id', function (req, res) {
+        sess = req.session;
+
+        if (!sess.userData) {
+            sess.userData = {
+                id: 2,
+                email: 'nd@binotel.ua',
+                name: 'nd'
+            };
+        }
+
+        if (sess.userData) {
+            data = req.body;
+
+            Post.updatePost(data, req.params.id,  function (err, rows, fields) {
+                if (err) throw err;
+                return res.json(rows);
+            })
+        } else {
+            res.redirect('/');
+        }
+
+    });
+
+
+    //add post
+    app.post('/admin/addpost', function (req, res) {
+        sess = req.session;
+
+        if (!sess.userData) {
+            sess.userData = {
+                id: 2,
+                email: 'nd@binotel.ua',
+                name: 'nd'
+            };
+        }
+
+        if (sess.userData) {
+            data = req.body;
+
+            Post.addPost(data, function (err, rows, fields) {
+                if (err) throw err;
+                return res.json(rows);
+            })
+        } else {
+            res.redirect('/');
+        }
+
+    });
+
+
+     //delete post
+    app.delete('/admin/posts/any/:id', function (req, res) {
+        sess = req.session;
+
+        if (!sess.userData) {
+            sess.userData = {
+                id: 2,
+                email: 'nd@binotel.ua',
+                name: 'nd'
+            };
+        }
+
+        if (sess.userData) {
+            // data = req.body;
+
+            Post.deletePost(req.params.id, function (err, rows, fields) {
+                if (err) throw err;
+                return res.json(rows);
+            })
+        } else {
+            res.redirect('/');
+        }
+
+    });
 
 
 
@@ -184,3 +298,5 @@ module.exports = function (app) {
         });
     });
 }
+
+

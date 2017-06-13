@@ -9,15 +9,15 @@
     <nav class="header__navbar">
       <ul class="navbar-ul">
         <li class="navbar-ul__item navbar-ul__item--active" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
-          <a routerLink="/dashboard">Мои Посты</a>  
+          <a routerLink="/admin/posts">Мои Посты</a>
         </li>
         <li class="navbar-ul__item" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
-          <a routerLink="/authors-columns">Колонка Авторов</a>
+          <a routerLink="/admin/create">Новый пост</a>
         </li>
         <li class="navbar-ul__item" [routerLinkActive]="['navbar-ul__item--active']" [routerLinkActiveOptions]="{exact:true}">
-          <a routerLink="/settings">Настройки</a>
-          </li>
-        <li class="navbar-ul__item"><a href="/logout">Logout</a></li>
+          <a routerLink="/admin/authors-columns">Колонка Авторов</a>
+        </li>
+        <li class="navbar-ul__item"><a href="/admin/logout">Выйти</a></li>
       </ul>
     </nav>
   </section>
