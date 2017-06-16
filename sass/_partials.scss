@@ -1,0 +1,62 @@
+//color variables
+$headerViolet: #6c3274;
+$logoViolet: #5b2263;
+$dateViolet: rgba(115, 55, 122, 0.9);
+$footerViolet: #73377a;
+$milkyWhite: #f3f2f5;
+$white: #ffffff;
+$lightGrey: #e8e8eb;
+$darkGrey: #a9a8ad;
+$headerGrey: #a8a8ac;
+$listGrey: #706f73;
+$black: #000000;
+
+
+//mixins
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin animate($animation, $duration, $repeat, $easing) {
+	-webkit-animation: $animation $duration $repeat $easing;
+	-moz-animation: $animation $duration $repeat $easing;
+	-ms-animation: $animation $duration $repeat $easing;
+	animation: $animation $duration $repeat $easing;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin transition($duration) {
+    -webkit-transition: $duration;
+    -moz-transition: $duration;
+    -ms-transition: $duration;
+    transition: $duration;
+}
+
+@mixin box-shadow($top, $left, $blur, $spread, $color) {
+	-webkit-box-shadow: $top $left $blur $spread $color;
+	-moz-box-shadow: $top $left $blur $spread $color;
+	box-shadow: $top $left $blur $spread $color;
+}
+
+
+
+
+
+//partials 
+.wrapper {
+    @include clearfix;
+    height: auto;
+    width: 980px;
+    margin: 0 auto;
+    // overflow: auto;
+
+}

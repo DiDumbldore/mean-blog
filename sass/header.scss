@@ -1,0 +1,199 @@
+@import './partials';
+
+//header
+
+.header {
+    @include clearfix;
+
+    .header-advertisment {
+        width: 100%;
+        height: 138px;
+        background-color: #313133;
+        position: relative;
+
+        .header-advertisment__img {
+            width: 980px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .header-navigation {
+        width: 100%;
+        min-width: 1160px;
+        height: 100px;
+        background-color: $headerViolet;
+        z-index: 3;
+        position: relative;
+
+        .header__logo {
+            float: left;
+            width: 123px;
+            height: 100px;
+
+            .logotype {
+                width: 100%;
+                height: 100%;
+                display: block;
+                background-color: $logoViolet;
+
+                img {
+                    margin: 28px 0 0 25px;
+                }
+            }
+
+            .logo-tail {
+                font: 400 13px/60px Open Sans;
+                color: $white;
+                @include opacity(0.5);
+            }
+        }
+    
+        .header__navbar {
+            width: 81%;
+            height: 100%;
+            height: inherit;
+            float: right;
+
+            .navbar-ul {
+                list-style: none;
+                overflow: hidden;
+                height: inherit;
+                float: right;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .navbar-ul__item {
+                    float: left;
+                    height: 100px;
+
+                    &:last-child {
+                        padding-right: 10px;
+                    }
+
+                    a {
+                        display: block;
+                        height: inherit;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        position: relative;
+                        @include opacity(0.45);
+                        @include transition(.3s);
+
+                        .navbar-ul__arrow {
+                            display: none;
+                            width: 2px;
+                            height: auto;
+                            border-left: 8px solid transparent;
+                            border-right: 8px solid transparent;
+                            border-bottom: 8px solid $milkyWhite;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        .navbar-ul__arrow--clear {
+                            display: block;
+                            width: 2px;
+                            height: auto;
+                            border-left: 8px solid red;
+                            border-right: 8px solid red;
+                            border-bottom: 8px solid transparent;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        &:hover {
+                            @include opacity(1);                   
+
+                            .navbar-ul__img {
+                            -webkit-filter: drop-shadow(2px 1px 3px rgba(225, 225, 225, 0.9));
+                                filter: drop-shadow(2px 1px 3px rgba(225, 225, 225, 0.9));
+                            }
+                        }
+
+                        .navbar-ul__text {
+                            color: $white;
+                            text-align: left;
+                            font: 300 11px/14px 'Roboto', sans-serif;
+                            padding: 35px 0 0;
+                        }
+
+                        .navbar-ul__img {
+                            margin: 37px 0 0;
+                        }
+                    }
+                }
+
+                .navbar-ul__item--active {
+
+                    a {
+                        display: block;
+                        text-align: center;
+                        height: inherit;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font: 400 11px/14px 'Roboto', sans-serif;
+                        @include opacity(1);
+                        @include transition(.3s);
+
+                        .navbar-ul__arrow {
+                            display: block; 
+                        }
+                    }
+
+                    .navbar-ul__text {
+                        -webkit-filter: drop-shadow(2px 1px 3px rgba(225, 225, 225, 0.9));
+                        filter: drop-shadow(2px 1px 3px rgba(225, 225, 225, 0.9));
+                    }
+
+                    .navbar-ul__img  {
+                        -webkit-filter: drop-shadow(2px 1px 3px rgba(225, 225, 225, 0.9));
+                        filter: drop-shadow(2px 1px 3px rgba(225, 225, 225, 0.9));
+                    }
+                }
+            }
+        }
+    }
+
+    .header__arrow {
+        // display: none;
+        position: absolute;
+        top: 247px;
+        width: 100%;
+        height: 0 px;
+        background-color: $headerViolet;
+
+        &:before, &:after {
+            content:'';
+            position: absolute;
+            bottom: 100%;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        &:before {
+            right: 50%;
+            border-top:9px solid $headerViolet;
+            border-right: 9px solid transparent;
+        }
+        
+        &:after {
+            left: 50%;
+            border-top: 9px solid $headerViolet;
+            border-left: 9px solid transparent;
+        }
+    }
+}

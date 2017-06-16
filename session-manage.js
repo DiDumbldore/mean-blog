@@ -15,6 +15,7 @@ module.exports = function (app) {
         database: 'business-times'
     };
 
+
     var sessionStore = new MySQLStore(options);
 
     app.use(session({
@@ -26,16 +27,87 @@ module.exports = function (app) {
     })
     );
 
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: false }));
-
-    app.set('views', __dirname + '/views');
-    app.set('view engine', 'ejs');
-    app.engine('html', require('ejs').renderFile);
-
     console.log('User', User);
     console.log('Post', Post);
 
+
+
+
+
+    //blog front with ejs
+    app.get('/homepage', function (req, res) {
+
+        Post.getAllPosts(function (err, rows) {
+            if (err) throw err;
+
+            postList = rows; //array
+            console.log("these are posts for ejs " + postList);
+
+            // for (var i = 0; i < rows.length; i++) {
+            //     var post = rows[i];
+            // }
+
+            console.log("here is post date " + postList[7].date); 
+
+           //cut date by design
+            for (var i = 0; i < postList.length; i++) {
+                shortDate = postList[i].date.slice(0, -6);
+            }
+
+            
+
+          
+            // shortDate = postList.date.slice(0, -6);
+
+            res.render('homepage', {
+                generalPosts: postList,
+                postShortDate : shortDate
+            });
+
+        });
+    });
+
+
+
+    //particular post page
+    app.get('/post/:id', function (req, res) {
+
+        Post.findById(req.params.id, function (err, rows, fields) {
+
+            if (rows.length) {
+
+                requestedIdPost = rows[0];
+                console.log("selected post for ejs " + requestedIdPost);
+
+                shortDate = rows[0].date.slice(0, -6);
+
+                res.render('article-detail', {
+                    post: requestedIdPost,
+                    postShortDate: shortDate
+                });
+
+            } else
+                //render 404 page here
+                return;
+        })
+
+    });
+
+
+
+    //article-detail заглушка
+    // app.get('/article-detail', function (req, res) {
+    //     res.render('article-detail');
+    // });
+
+
+
+
+
+
+
+
+    //admin mode, login
     var sess;
     app.get('/', function (req, res) {
         sess = req.session;
@@ -50,6 +122,8 @@ module.exports = function (app) {
         }
     });
 
+
+    //login to admin
     app.post('/login', function (req, res) {
         sess = req.session;
 
@@ -76,13 +150,19 @@ module.exports = function (app) {
         console.log('sess', sess);
 
         if (sess.userData) {
-            //Here will be redirect to ADMIN HOME PAGE (after build)
-            res.write('<h1> Hello ' + sess.userData.email + '</h1>');
+            //Here will be redirect to /admin/posts (after build)
+            res.write('<h1> Hello ' + sess.userData.email + '</h1><br><p>Here admin/posts after build</p><br>');
             res.end('<a href="/logout">Logout</a>');
         } else {
             res.redirect('/');
         }
     });
+
+
+
+
+
+
 
 
 
@@ -198,7 +278,9 @@ module.exports = function (app) {
 
             Post.getAllCategories(function (err, rows, fields) {
                 if (err) throw err;
+
                 return res.json(rows);
+
             })
 
         } else {
@@ -222,7 +304,7 @@ module.exports = function (app) {
         if (sess.userData) {
             data = req.body;
 
-            Post.updatePost(data, req.params.id,  function (err, rows, fields) {
+            Post.updatePost(data, req.params.id, function (err, rows, fields) {
                 if (err) throw err;
                 return res.json(rows);
             })
@@ -259,7 +341,7 @@ module.exports = function (app) {
     });
 
 
-     //delete post
+    //delete post
     app.delete('/admin/posts/any/:id', function (req, res) {
         sess = req.session;
 

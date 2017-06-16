@@ -118,6 +118,58 @@
                     border-top: 1px solid #d1d0d5;
                 }
             }
+
+            .post__category {
+                width: 280px;
+                height: 34px;
+                float: left;
+                margin: 20px 0 0;
+                position: relative;
+
+                .post-categorytext {
+                    display: inline-block;
+                    width: 100%;
+                    cursor: pointer;
+                    padding: 10px 15px;
+                    outline: 0;
+                    border: 0;
+                    border-top: 1px solid #d1d0d5;
+                    border-radius: 0;
+                    background: #e9e8ed;
+                    color: #010101;
+                    font: 400 13px/15px Open Sans;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+
+                    &::-ms-expand {
+                            display: none;
+                    }
+                    
+                    &:hover,
+                    &:focus {
+                        color: #010101;
+                        background: #e9e8ed;
+                    }
+                
+                    &:disabled {
+                        opacity: 0.5;
+                        pointer-events: none;
+                    }
+                }
+
+                .select__arrow {
+                    position: absolute;
+                    top: 16px;
+                    right: 15px;
+                    width: 0;
+                    height: 0;
+                    pointer-events: none;
+                    border-style: solid;
+                    border-width: 8px 5px 0 5px;
+                    border-color: #d1d0d5 transparent transparent transparent;
+                }
+            }
         }
 
         .post__buttons {

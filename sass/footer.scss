@@ -1,0 +1,51 @@
+@import './partials';
+
+// footer
+.footer {
+    background-color: $footerViolet;
+    width: 100%;
+
+    .footer-ul {
+        list-style-type: none;
+        padding: 76px 0 0;
+        margin: 0 0 0 23px;
+
+        .footer-ul__item {
+            margin: 0 0 10px;
+
+            a {
+                color: $white;
+                font: 300 13px/22px Open Sans;
+                @include opacity(0.5);
+                text-decoration: none;
+
+                &:hover {
+                    @include opacity(1);
+                }
+            }
+        }
+    }
+
+    .footer__copyright {
+        color: $white;
+        font: 300 11px/18px Open Sans;
+        @include opacity(0.4);
+        margin: 15px 0 0;
+        padding: 0 0 0 23px;
+    }
+
+    .footer__logo {
+        margin: 94px 0 0;
+
+        .logotype {
+            width: 122px;
+            height: 100px;
+            display: block;
+            background-color: $logoViolet;
+
+            img {
+                padding: 29px 50px 25px 22px;
+            }
+        }
+    }
+}

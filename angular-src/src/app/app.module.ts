@@ -49,15 +49,15 @@ import 'rxjs/Observable';
   providers: [
     PostService,
     CategoryService,
-    // {
-    //   provide: 'category',
-    //   useValue: () => {
-    //     return {
-    //       id: 1,
-    //       title: '',
-    //     }
-    //   }
-    // }
+    {
+      provide: 'category',
+      useValue: () => {
+        return {
+          id: 1,
+          title: '',
+        }
+      }
+    }
   ],
   bootstrap: [AppComponent]
 })

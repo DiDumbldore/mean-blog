@@ -32,14 +32,17 @@ export class CreatePostComponent implements OnInit {
 
   //get new post content
   saveEditedPostContent() {
-    let updatedContent = this.postNewContent.editor.getContent();
+    let updatedContent = this.postNewContent.editor.getContent({format : 'html'});
     console.log("fired on click " + updatedContent);
     // this.post.content = updatedContent;
   }
 
 
   addPost(data) {
-    console.log("this is created bodyof post " + data.title);
+    data.content = this.postNewContent.editor.getContent({format : 'text'});
+    data.shortContent = data.content.replace(/^(.{220}[^\s]*).*/, "$1") + "..."; 
+    console.log("this is created bodyof post " + data.shortContent);
+
     this._postService.addPost(data).subscribe(
       data => console.log(data),
       err => console.log(err),

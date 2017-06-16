@@ -64,7 +64,7 @@ export class TinymceEditorComponent implements AfterViewInit, OnDestroy {
 
         editor.on('blur', () => {
           //create content variable
-          let content = editor.getContent();
+          let content = editor.getContent({format : 'text'});
           // this.modelChange.emit(content);
           console.log("new content is " + content);
 

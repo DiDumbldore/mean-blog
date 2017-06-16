@@ -17,6 +17,8 @@
             <a routerLink="/admin/posts/smth">Что-то еще</a>
         </li>
     </ul>-->
+
+
     <ul class="categories-ul">
         <li *ngFor="let categoryItem of categories" class="categories-ul__item" [class.categories-ul__item--active]="categoryItem === selectedCategory" (click)="onSelect(categoryItem)">
                 <a [routerLink]="['/admin/posts', categoryItem.category]">{{ categoryItem.category }}</a>    

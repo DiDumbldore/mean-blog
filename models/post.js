@@ -13,7 +13,7 @@ var pool = mysql.createPool({
 
 //get all posts
 module.exports.getAllPosts = function (callback) {
-    pool.query('SELECT * FROM `postStructure`', callback);
+    pool.query('SELECT * FROM `postStructure` ORDER BY id DESC', callback);
 }
 
 
@@ -29,7 +29,7 @@ module.exports.findById = function ( id, callback) {
 }
 
 
-//filter categories of posts
+//get categories of posts
 module.exports.getAllCategories = function (callback) {
     pool.query("SELECT `category` FROM `postStructure`", callback);
 }
@@ -38,7 +38,7 @@ module.exports.getAllCategories = function (callback) {
 
 module.exports.updatePost = function (data, id, callback) {
     // console.log("dataid is " + id);
-    pool.query("UPDATE `postStructure` set title=?, content=?, date=?, tags=?  where id=?", [data.title, data.content, data.date, data.tags, id], callback);
+    pool.query("UPDATE `postStructure` set title=?, content=?, shortContent=?, date=?, tags=?, category=?  where id=?", [data.title, data.content, data.shortContent, data.date, data.tags, data.category, id], callback);
 
     // connection.query('UPDATE `employee` SET `employee_name`=?,`employee_salary`=?,`employee_age`=? where `id`=?', [req.body.employee_name, req.body.employee_salary, req.body.employee_age, req.body.id], function (error, results, fields) {
     //         if (error) throw error;
@@ -48,7 +48,7 @@ module.exports.updatePost = function (data, id, callback) {
 
 module.exports.addPost = function (data, callback) {
     // console.log("dataid is " + id);
-    var newPost = { title: data.title, content: "djhgfnhgfn", date: data.date, tags: data.tags};
+    var newPost = { title: data.title, content: data.content, shortContent: data.shortContent, date: data.date, tags: data.tags, category: data.category};
 
     pool.query("INSERT into `postStructure` set ?", newPost, callback);
 
@@ -62,8 +62,6 @@ module.exports.deletePost = function (id, callback) {
 }
 
 
-
-// var newPost = { title: "xfgzdfgdxfg", content: "djhgfnhgfn", date: 112341, tags: "me me me me"};
 
 
 // pool.query("DELETE FROM `postStructure` WHERE id = ?", [17], function (error, results, fields) {

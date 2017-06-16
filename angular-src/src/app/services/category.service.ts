@@ -13,6 +13,7 @@ export class CategoryService {
     // console.log("get-categories service works");
       return this._http.get(this._categoryUrl)
       	 .map(res => res.json())
+         
   }
   
 }

@@ -1,0 +1,384 @@
+<main class="main main--homepage">
+
+  <section class="share-search-block">
+    <article class="wrapper">
+
+
+      <section class="social-block">
+        <ul class="social-block-ul">
+          <li class="social-block__item">
+            <a href="#">
+                <img class="social-block__img" src="/images/icon-social-fb.png" alt="soc-i-1">
+              </a>
+          </li>
+          <li class="social-block__item">
+            <a href="#">
+                <img class="social-block__img" src="/images/icon-social-twi.png" alt="soc-i-2">
+              </a>
+          </li>
+          <li class="social-block__item">
+            <a href="#">
+                <img class="social-block__img" src="/images/icon-social-p.png" alt="soc-i-3">
+              </a>
+          </li>
+          <li class="social-block__item">
+            <a href="#">
+                <img class="social-block__img" src="/images/icon-social-g.png" alt="soc-i-4">
+              </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="search-block">
+        <input type="text" class="search-block__input">
+        <img src="/images/icon-search.png" alt="icon-search" class="search-block__img">
+      </section>
+    </article>
+  </section>
+
+  <!--content blocks-->
+  <section class="content-block content-block--general">
+    <article class="wrapper">
+
+
+
+      <article class="content-block__articles">
+
+
+
+              <% for(var i=0; i < generalPosts.length; i++) { %>
+
+                <a href="/post/<%= generalPosts[i].id %>/" class="article__article-general article-general--medium">
+                  <section class="article__image">
+                    <img src="/images/block-img-<%= generalPosts[i].id %>.png" alt="article-img">
+                  </section>
+                  <section class="article__info article__info--medium">
+                    <article class="article-date">
+                      <p class="article-date__text">
+                        <%= postShortDate %>
+                      </p>
+                    </article>
+                    <article class="article-views">
+                      <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+                      <p class="article-views__num">1027</p>
+                    </article>
+                    <article class="article-category">
+                      <p class="article-category__text">Эффектвнст</p>
+                    </article>
+                    <article class="article-title">
+                      <p class="article-title__text">
+                        <%= generalPosts[i].title %>
+                      </p>
+                    </article>
+                  </section>
+                </a>
+                <% } %>
+
+                  <a href="#" class="article__article-general article-general--medium">
+                    <section class="article__image">
+                      <img src="/images/block-img-3.png" alt="article-img">
+                    </section>
+                    <section class="article__info article__info--medium">
+                      <article class="article-date">
+                        <p class="article-date__text">sep 7</p>
+                      </article>
+                      <article class="article-views">
+                        <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+                        <p class="article-views__num">1027</p>
+                      </article>
+                      <article class="article-category">
+                        <p class="article-category__text">Эффектвнст</p>
+                      </article>
+                      <article class="article-title">
+                        <p class="article-title__text">Привычки успешных людей. Кто и что за этим стоит</p>
+                      </article>
+                    </section>
+                  </a>
+
+      </article>
+
+      <article class="content-block__article-view">
+
+        <a href="/article-detail" class="article__article-general article-general--large">
+          <section class="article__image">
+            <img src="/images/block-img-1.png" alt="article-img">
+          </section>
+          <section class="article__info article__info--large">
+            <article class="article-date">
+              <p class="article-date__text">sep 7, 2017</p>
+            </article>
+            <article class="article-views">
+              <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+              <p class="article-views__num">1027</p>
+            </article>
+            <article class="article-category">
+              <p class="article-category__text">Эффектвнст</p>
+            </article>
+            <article class="article-title">
+              <p class="article-title__text">Три ловушки при планировании</p>
+            </article>
+          </section>
+        </a>
+
+      </article>
+
+    </article>
+  </section>
+
+
+  <!--category block, 1-->
+  <section class="content-block content-block--category content-block--dark">
+    <article class="wrapper">
+
+      <h2 class="content-block__header">Продажи и сервис</h2>
+
+      <section class="content-block__articles">
+
+        <a href="#" class="article__article-category article-category--small">
+          <section class="article__image">
+            <img src="/images/block-img-4.png" alt="article-img">
+          </section>
+          <section class="article__info article__info--small">
+            <article class="article-date">
+              <p class="article-date__text">sep 7</p>
+            </article>
+            <article class="article-views">
+              <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+              <p class="article-views__num">1027</p>
+            </article>
+          </section>
+          <article class="article-title">
+            <p class="article-title__text">10 худших советов начинающим бизнесменам и карьеристам</p>
+          </article>
+        </a>
+
+        <a href="#" class="article__article-category article-category--small">
+          <section class="article__image">
+            <img src="/images/block-img-5.png" alt="article-img">
+          </section>
+          <section class="article__info article__info--small">
+            <article class="article-date">
+              <p class="article-date__text">sep 7</p>
+            </article>
+            <article class="article-views">
+              <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+              <p class="article-views__num">1027</p>
+            </article>
+          </section>
+          <article class="article-title">
+            <p class="article-title__text">iForum 2017. Как это было</p>
+          </article>
+        </a>
+
+        <a href="#" class="article__article-category article-category--small">
+          <section class="article__image">
+            <img src="/images/block-img-6.png" alt="article-img">
+          </section>
+          <section class="article__info article__info--small">
+            <article class="article-date">
+              <p class="article-date__text">sep 7</p>
+            </article>
+            <article class="article-views">
+              <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+              <p class="article-views__num">1027</p>
+            </article>
+          </section>
+          <article class="article-title">
+            <p class="article-title__text">Будущее. как дроны кардинально изменят мир</p>
+          </article>
+        </a>
+      </section>
+
+    </article>
+  </section>
+
+
+  <!--vertical block-->
+  <section class="content-block content-block--category content-block--vertical">
+    <article class="wrapper">
+
+      <h2 class="content-block__header">Маркетинг</h2>
+
+      <section class="content-block__wrap">
+        <section class="content-block__articles">
+
+          <a href="#" class="article__article-category article-category--horizontal">
+
+            <section class="article__view">
+              <section class="article__image">
+                <img src="/images/block-img-10.png" alt="article-img">
+              </section>
+              <section class="article__info article__info--small">
+                <article class="article-date">
+                  <p class="article-date__text">sep 7</p>
+                </article>
+                <article class="article-views">
+                  <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+                  <p class="article-views__num">1027</p>
+                </article>
+              </section>
+            </section>
+
+            <section class="article__content">
+              <article class="article-title">
+                <p class="article-title__text">10 худших советов начинающим бизнесменам и карьеристам</p>
+              </article>
+
+              <p class="article-shortcontent">Binotel соединяет возможности аппаратных АТС с множеством современных функций, что позволит иметь полноценную
+                телефонную станцию для Вашей компании. В зависимости от тарифного плана вам будет доступно: ляет использоватm</p>
+            </section>
+          </a>
+
+          <a href="#" class="article__article-category article-category--horizontal">
+
+            <section class="article__view">
+              <section class="article__image">
+                <img src="/images/block-img-11.png" alt="article-img">
+              </section>
+              <section class="article__info article__info--small">
+                <article class="article-date">
+                  <p class="article-date__text">sep 7</p>
+                </article>
+                <article class="article-views">
+                  <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+                  <p class="article-views__num">1027</p>
+                </article>
+              </section>
+            </section>
+
+            <section class="article__content">
+              <article class="article-title">
+                <p class="article-title__text">10 худших советов начинающим бизнесменам и карьеристам</p>
+              </article>
+
+              <p class="article-shortcontent">Binotel соединяет возможности аппаратных АТС с множеством современных функций, что позволит иметь полноценную
+                телефонную станцию для Вашей компании. В зависимости от тарифного плана вам будет доступно: ляет использоватm</p>
+            </section>
+          </a>
+
+          <a href="#" class="article__article-category article-category--horizontal">
+
+            <section class="article__view">
+              <section class="article__image">
+                <img src="/images/block-img-12.png" alt="article-img">
+              </section>
+              <section class="article__info article__info--small">
+                <article class="article-date">
+                  <p class="article-date__text">sep 7</p>
+                </article>
+                <article class="article-views">
+                  <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+                  <p class="article-views__num">1027</p>
+                </article>
+              </section>
+            </section>
+
+            <section class="article__content">
+              <article class="article-title">
+                <p class="article-title__text">10 худших советов начинающим бизнесменам и карьеристам</p>
+              </article>
+
+              <p class="article-shortcontent">Binotel соединяет возможности аппаратных АТС с множеством современных функций, что позволит иметь полноценную
+                телефонную станцию для Вашей компании. В зависимости от тарифного плана вам будет доступно: ляет использоватm</p>
+            </section>
+          </a>
+
+        </section>
+
+        <section class="content-block__adv">
+        </section>
+
+      </section>
+
+    </article>
+  </section>
+
+  <!--category block, 2-->
+  <section class="content-block content-block--category content-block--dark">
+    <article class="wrapper">
+
+      <h2 class="content-block__header">Эффективность</h2>
+
+      <section class="content-block__articles">
+
+        <a href="#" class="article__article-category article-category--small">
+          <section class="article__image">
+            <img src="/images/block-img-7.png" alt="article-img">
+          </section>
+          <section class="article__info article__info--small">
+            <article class="article-date">
+              <p class="article-date__text">sep 7</p>
+            </article>
+            <article class="article-views">
+              <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+              <p class="article-views__num">1027</p>
+            </article>
+          </section>
+          <article class="article-title">
+            <p class="article-title__text">10 худших советов начинающим бизнесменам и карьеристам</p>
+          </article>
+        </a>
+
+        <a href="#" class="article__article-category article-category--small">
+          <section class="article__image">
+            <img src="/images/block-img-8.png" alt="article-img">
+          </section>
+          <section class="article__info article__info--small">
+            <article class="article-date">
+              <p class="article-date__text">sep 7</p>
+            </article>
+            <article class="article-views">
+              <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+              <p class="article-views__num">1027</p>
+            </article>
+          </section>
+          <article class="article-title">
+            <p class="article-title__text">iForum 2017. Как это было</p>
+          </article>
+        </a>
+
+        <a href="#" class="article__article-category article-category--small">
+          <section class="article__image">
+            <img src="/images/block-img-9.png" alt="article-img">
+          </section>
+          <section class="article__info article__info--small">
+            <article class="article-date">
+              <p class="article-date__text">sep 7</p>
+            </article>
+            <article class="article-views">
+              <img src="/images/icon-views.png" alt="icon-views" class="article-views__icon">
+              <p class="article-views__num">1027</p>
+            </article>
+          </section>
+          <article class="article-title">
+            <p class="article-title__text">Будущее. как дроны кардинально изменят мир</p>
+          </article>
+        </a>
+      </section>
+
+    </article>
+  </section>
+
+  <!--advertisement block-->
+  <section class="adv-block">
+    <article class="wrapper">
+
+      <h2 class="adv-block__header">Реклама</h2>
+      <img class="adv-block__img" src="/images/adv-image-2.png" alt="adv-img">
+    </article>
+  </section>
+
+  <section class="submission-block">
+    <article class="wrapper">
+
+      <h1 class="submission__header">Подпишитесь на статьи</h1>
+      <p class="submission__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to </p>
+      <section class="submission__submit">
+        <input class="submission__field" type="text">
+        <button class="submission__button" type="submit">Подписаться</button>
+      </section>
+    </article>
+  </section>
+
+</main>

@@ -1,7 +1,9 @@
-const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const express = require('express'),
+      path = require('path'),
+      bodyParser = require('body-parser'),
+      cors = require('cors'),
+      sassMiddleware = require('node-sass-middleware'),
+      expressLayouts = require('express-ejs-layouts');
 
 
 const app = express();
@@ -13,8 +15,27 @@ app.use('/users', users);
 
 app.use(cors());
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-//Set static folder 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.use(expressLayouts);
+app.engine('html', require('ejs').renderFile);
+
+
+// sass middleware, compiles page
+app.use(require('node-sass-middleware')({
+  src: path.join(__dirname, '/sass'),
+  dest: path.join(__dirname, '/public/stylesheets'),
+  prefix:  '/stylesheets',
+  sourceMap: true,
+  outputStyle: 'compressed'
+})); 
+
+
+
+// static, serves page
 app.use(express.static(path.join(__dirname, 'public')));
 
 //session and coockies

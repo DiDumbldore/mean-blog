@@ -10,14 +10,16 @@
   "dependencies": {
     "bcryptjs": "*",
     "body-parser": "*",
+    "bootstrap": "^3.3.7",
     "cors": "*",
     "ejs": "^1.0.0",
     "express": "*",
+    "express-ejs-layouts": "^2.3.0",
     "express-mysql-session": "^1.2.0",
     "express-session": "*",
     "md5": "^2.2.1",
     "mysql": "github:mysqljs/mysql",
-    "bootstrap": "^3.3.7"
+    "node-sass-middleware": "^0.11.0"
   },
   "author": "Nadya Korniyenko",
   "license": "ISC",

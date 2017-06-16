@@ -13,11 +13,7 @@ export class PostService {
   urlParams;
   id;
 
-  constructor(private _http: Http) {
-    // this.posts = _http.get(this._url)
-    //   .map(res => res.json())
-    //   .map(rawPosts => rawPosts.map(Post.create));
-  }
+  constructor(private _http: Http) {}
 
 
 

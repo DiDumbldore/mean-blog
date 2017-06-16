@@ -3,6 +3,8 @@ import { CategoryService } from '../../services/category.service';
 import 'rxjs/add/operator/map';
 // import { PostService } from '../../services/post.service';
 
+import * as $ from 'jquery';
+declare var jQuery: any;
 
 @Component({
   selector: 'app-categories',
@@ -12,15 +14,44 @@ import 'rxjs/add/operator/map';
 })
 export class CategoriesComponent implements OnInit {
   categories: any[];
+  // uniqueCategories: any[];
 
-  constructor(private _categoryService: CategoryService) { }
+  constructor(private _categoryService: CategoryService) {
 
-// categoryParams: string;
+  }
+
+  // groupBy(items, propertyName) {
+  //   var result = [];
+  //   $.each(items, function (index, item) {
+  //     if ($.inArray(item[propertyName], result) == -1) {
+  //       result.push(item[propertyName]);
+  //     }
+  //   });
+  //   return result;
+  // }
+
+  // categoryParams: string;
 
   ngOnInit() {
     this._categoryService.getCategories()
       .subscribe(categories => this.categories = categories);
+
+      // this.uniqueCategories = this.groupBy(this.categories, 'category');
+
+    // var uniqueCategories = [];
+
+    // $.each(categories, function (index, value) {
+    //   if ($.inArray(value.category, uniqueCategories) === -1) {
+    //     uniqueCategories.push(value.category);
+    //   }
+    // })
+    // console.log("not unique " + this.categories);
   }
+
+  
+
+  
+  
 
 
   onSelect(categoryItem: CategoryItem): void {

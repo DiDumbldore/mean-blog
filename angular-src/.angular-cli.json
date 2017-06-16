@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "../public",
+      "outDir": "dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -30,7 +30,8 @@
         "../node_modules/tinymce/plugins/paste/plugin.js",
         "../node_modules/tinymce/plugins/imagetools/plugin.js",
         "../node_modules/tinymce/plugins/code/plugin.js",
-        "../node_modules/tinymce/plugins/image/plugin.js"
+        "../node_modules/tinymce/plugins/image/plugin.js",
+        "../src/assets/plugins/croppic/croppic.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

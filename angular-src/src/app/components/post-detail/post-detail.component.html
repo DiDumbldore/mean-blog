@@ -8,10 +8,8 @@
       </section>
 
       <section class="post__content">
-        <input name="postTitle" [(ngModel)]="post.title"
-              class="post-title" 
-              value="{{ post.title }}">
-         
+        <input name="postTitle" [(ngModel)]="post.title" class="post-title" value="{{ post.title }}">
+
 
         <!--<section class="post__img">
           <img class="post__img" src="../../assets{{post.titleImage}}" alt="post-img">
@@ -21,31 +19,38 @@
           <!--<my-croppic></my-croppic>-->
         </article>
 
-        <tinymce-editor [elementId]="'post-editor'" [model]="post.content" >
+        <tinymce-editor [elementId]="'post-editor'" [model]="post.content">
         </tinymce-editor>
-        
+
       </section>
     </article>
     <article class="post__lower-block">
       <section class="post__inputs">
 
         <section class="post__date">
-          <input name="postDate" [(ngModel)]="post.date"
-                 class="post-datetext" 
-                 value="{{ post.date }}">
+          <input name="postDate" [(ngModel)]="post.date" class="post-datetext" value="{{ post.date }}">
         </section>
 
         <section class="post__tags">
-          <input  name="postTags" [(ngModel)]="post.tags"
-                 class="post-tagstext" 
-                 value="{{ post.tags }}">
+          <input name="postTags" [(ngModel)]="post.tags" class="post-tagstext" value="{{ post.tags }}">
+        </section>
+
+        <section class="post__category">
+          <select name="postCategory" class="post-categorytext" [(ngModel)]="post.category" value="{{ post.category }}">
+                 <option value="Личный опыт">Личный опыт</option>
+                 <option value="Продажи и сервис">Продажи и сервис</option>
+                 <option value="Мрктнг">Мрктнг</option>
+                 <option value="Эффективность">Эффективность</option>
+                 <option value="Бизнес-инструменты">Бизнес-инструменты</option>
+          </select>
+          <div class="select__arrow"></div>
         </section>
 
       </section>
-      
+
       <section class="post__buttons">
         <button class="post__btn" (click)="updatePost(post)">
-          <a >Сохранить изменения</a>
+          <a>Сохранить изменения</a>
         </button>
       </section>
     </article>

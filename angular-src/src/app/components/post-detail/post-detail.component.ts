@@ -4,6 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Post } from "../../models/post.model";
 import { TinymceEditorComponent } from '../tinymce-editor/tinymce-editor.component';
 import { Observable } from 'rxjs/Rx';
+// import debouce from 'lodash-es/debounce';
 
 
 // import 'summernote';
@@ -25,7 +26,7 @@ export class PostDetailComponent implements OnInit {
   postNewContent: TinymceEditorComponent;
   value;
   public posts;
-
+  
 
   // postTitleValue = '';
   // postDateValue = '';
@@ -57,15 +58,22 @@ export class PostDetailComponent implements OnInit {
 
 
   //get updated post content
-  saveEditedPostContent() {
-    let updatedContent = this.postNewContent.editor.getContent();
-    console.log("fired on click " + updatedContent);
-    // this.post.content = updatedContent;
-  }
+  // saveEditedPostContent() {
+  //   let updatedContent = this.postNewContent.editor.getContent();
+  //   console.log("fired on click " + updatedContent);
+  //   // this.post.content = updatedContent;
+  // }
+
+  //shorten content for shortContent to 300
+  // str = this.postNewContent.editor.getContent();
+  // str.replace(/^(.{11}[^\s]*).*/, "$1"); 
 
 
   updatePost(data) {
-    console.log("this is posted bodyof post " + data.title);
+    data.content = this.postNewContent.editor.getContent({format : 'text'});
+    data.shortContent = data.content.replace(/^(.{220}[^\s]*).*/, "$1") + "..."; 
+    console.log("this is posted bodyof post " + data.shortContent);
+
     this._postService.updatePost(data).subscribe(
       data => console.log(data),
       err => console.log(err),
